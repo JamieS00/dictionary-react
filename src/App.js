@@ -1,11 +1,16 @@
 import "./App.css";
+import Dictionary from "./Dictionary";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App mt-5">
       <div className="container">
         <h1>Dictionary App</h1>
-        <footer>
+        <main className="mt-4">
+          <Dictionary />
+        </main>
+
+        <footer className="mt-5">
           <p>
             This project was coded by Jamie Singleton and is{" "}
             <a

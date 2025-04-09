@@ -1,0 +1,14 @@
+import React from "react";
+
+const Results = (props) => {
+  if (props.results) {
+    return (
+      <div className="Results">
+        <h2>{props.results.word}</h2>
+      </div>
+    );
+  } else {
+    return null;
+  }
+};
+export default Results;

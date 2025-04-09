@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Results from "./Results";
 import axios from "axios";
 import "./Dictionary.css";
 
@@ -9,7 +10,7 @@ import "./Dictionary.css";
 
 const Dictionary = () => {
   const [keyword, setKeyword] = useState("");
-  // const [word, setwordData] = useState("");
+  const [wordData, setwordData] = useState(null); //Result component
 
   const search = (event) => {
     event.preventDefault();
@@ -27,13 +28,18 @@ const Dictionary = () => {
 
   //2. Response from API
   const handleResponse = (response) => {
-    console.log(response.data);
+    setwordData(response.data);
+    // console.log(response.data.meanings[1]);
+
     // setwordData({
+    //   noun: response.data.meanings[1].partOfSpeech,
+    //   nounDef: response.data.meanings[1].definition,
     //   phonetic: response.data.phonetic,
-    //   noun: response.data.meanings[0].partOfSpeech,
-    //   nounDef: response.data.meanings[0].defintion,
-    //   nounSynonyms: response.data.meanings[0].synonyms,
+    //   nounSynonyms: response.data.meanings[1].synonyms,
     // });
+
+    // console.log(response.data.meanings[1].partOfSpeech); //noun
+    // console.log(response.data.meanings[1].definition); //def
   };
 
   return (
@@ -51,6 +57,7 @@ const Dictionary = () => {
         </form>
 
         <p className="mt-3">i.e. wine, coding, love</p>
+        <Results results={wordData} />
       </div>
     </div>
   );

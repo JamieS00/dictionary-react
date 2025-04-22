@@ -1,4 +1,5 @@
 import React from "react";
+import Synonyms from "./Synonyms";
 
 //NEED TO LOOP THROUGH THE DEF ONCE GETTING WORD
 const Definitions = (props) => {
@@ -6,9 +7,17 @@ const Definitions = (props) => {
 
   return (
     <div className="Definitions">
+      <br />
+      <br />
+
       <h3>{props.meaning.partOfSpeech}</h3>
-      <p>{props.meaning.definition}</p>
-      <p> {props.meaning.example}</p>
+      <div>
+        <strong>Definitions: </strong> {props.meaning.definition}
+        <br />
+        <strong>Example: </strong> {props.meaning.example}
+        <br />
+      </div>
+      <Synonyms synonyms={props.meaning.synonyms} />
     </div>
   );
 };

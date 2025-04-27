@@ -8,8 +8,8 @@ import "./Dictionary.css";
 2.API call 
 */
 
-const Dictionary = () => {
-  const [keyword, setKeyword] = useState("life");
+const Dictionary = (props) => {
+  const [keyword, setKeyword] = useState(props.default);
   const [wordData, setwordData] = useState(null); //Result component
   const [loaded, setLoaded] = useState(false);
 

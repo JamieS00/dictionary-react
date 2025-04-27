@@ -4,6 +4,7 @@
   border-radius: 8px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   /* margin: 20px 0; */
+  text-align: start;
 }
 .Dictionary label {
   font-weight: 600;

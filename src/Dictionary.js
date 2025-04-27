@@ -51,6 +51,7 @@ const Dictionary = (props) => {
               type="search"
               placeholder="sunshine"
               onChange={handleKeyword}
+              defaultValue={props.default}
               required
             />
           </form>

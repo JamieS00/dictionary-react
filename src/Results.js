@@ -1,5 +1,6 @@
 import React from "react";
 import Definitions from "./Definitions";
+import "./Results.css";
 
 const Results = (props) => {
   // console.log("Results from dict :", props.results);
@@ -9,7 +10,7 @@ const Results = (props) => {
       <div className="Results">
         <section>
           <h1>{props.results.word}</h1>
-          <h3>{props.results.phonetic}</h3>
+          <h2>{props.results.phonetic}</h2>
         </section>
         {props.results.meanings.map((i, index) => {
           return (

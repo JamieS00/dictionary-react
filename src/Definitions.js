@@ -1,6 +1,7 @@
 import React from "react";
 import Synonyms from "./Synonyms";
 import Example from "./Example";
+import "./Definitions.css";
 
 //NEED TO LOOP THROUGH THE DEF ONCE GETTING WORD
 const Definitions = (props) => {
@@ -9,13 +10,11 @@ const Definitions = (props) => {
   return (
     <div className="Definitions">
       <br />
-      <br />
-
       <section>
         <h3>{props.meaning.partOfSpeech}</h3>
         <div>
-          <strong>Definitions: </strong> {props.meaning.definition}
-          {/* <br /> */}
+          <p> {props.meaning.definition}</p>
+
           <Example ex={props.meaning.example} />
         </div>
         <Synonyms synonyms={props.meaning.synonyms} />

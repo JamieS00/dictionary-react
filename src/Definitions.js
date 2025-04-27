@@ -11,13 +11,15 @@ const Definitions = (props) => {
       <br />
       <br />
 
-      <h3>{props.meaning.partOfSpeech}</h3>
-      <div>
-        <strong>Definitions: </strong> {props.meaning.definition}
-        {/* <br /> */}
-        <Example ex={props.meaning.example} />
-      </div>
-      <Synonyms synonyms={props.meaning.synonyms} />
+      <section>
+        <h3>{props.meaning.partOfSpeech}</h3>
+        <div>
+          <strong>Definitions: </strong> {props.meaning.definition}
+          {/* <br /> */}
+          <Example ex={props.meaning.example} />
+        </div>
+        <Synonyms synonyms={props.meaning.synonyms} />
+      </section>
     </div>
   );
 };

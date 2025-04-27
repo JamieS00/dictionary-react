@@ -44,21 +44,21 @@ const Dictionary = (props) => {
   if (loaded) {
     return (
       <div className="Dictionary">
-        <div className="search-section">
+        <section>
           <form onSubmit={handleSubmit}>
+            <label> What word do you want to look up?</label>
             <input
-              className="search-box"
               type="search"
-              placeholder="sunset"
+              placeholder="sunshine"
               onChange={handleKeyword}
               required
             />
           </form>
-          <div className="hint mt-2">suggested words: family, plants, joy</div>
-          <br />
+          <small className="hint mt-2">i.e. family, plants, joy</small>
+        </section>
+        <br />
 
-          <Results results={wordData} />
-        </div>
+        <Results results={wordData} />
       </div>
     );
   } else {

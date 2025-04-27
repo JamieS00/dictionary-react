@@ -7,8 +7,10 @@ const Results = (props) => {
   if (props.results) {
     return (
       <div className="Results">
-        <h1>{props.results.word}</h1>
-        <h3>{props.results.phonetic}</h3>
+        <section>
+          <h1>{props.results.word}</h1>
+          <h3>{props.results.phonetic}</h3>
+        </section>
         {props.results.meanings.map((i, index) => {
           return (
             <div key={index}>

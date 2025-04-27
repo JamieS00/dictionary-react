@@ -1,14 +1,25 @@
-.search-section {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
+.Dictionary section {
+  background: white;
   padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  /* margin: 20px 0; */
 }
-
-.search-box {
-  padding: 12px 20px;
-  border: 1px solid gray;
+.Dictionary label {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: block;
+  line-height: 29px;
+}
+.Dictionary input {
+  padding: 22px;
+  line-height: 21px;
+  border: 1px solid #ddd;
+  color: #666;
   border-radius: 5px;
+  font-size: 18px;
   width: 100%;
-  max-width: 500px;
+  /* max-width: 500px; */
 }

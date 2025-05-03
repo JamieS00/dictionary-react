@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Results from "./Results";
 import axios from "axios";
 import "./Dictionary.css";
+import Images from "./Images";
 
 /*
 1.keep track of input 
@@ -12,13 +13,23 @@ const Dictionary = (props) => {
   const [keyword, setKeyword] = useState(props.default);
   const [wordData, setwordData] = useState(null); //Result component
   const [loaded, setLoaded] = useState(false);
+  const [image, setImage] = useState(null); //Image Component
 
-  //show word as default
+  const handleImageResponse = (response) => {
+    // console.log("INSIDE HANDLE IMAGE FUNCTION");
+    // console.log(response.data.photos);
+    setImage(response.data.photos);
+  };
+
   const search = () => {
     //API call
     let apiKey = "4ddbb61eb5o419b8d734a63d7f1t0b56";
     let Url = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     axios.get(Url).then(handleResponse);
+
+    //Image API
+    let ImageURL = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}`;
+    axios.get(ImageURL).then(handleImageResponse);
   };
 
   const handleSubmit = (event) => {
@@ -31,7 +42,7 @@ const Dictionary = (props) => {
     setKeyword(event.target.value);
   };
 
-  //2. Response from API
+  //2. Response from Dict API
   const handleResponse = (response) => {
     setwordData(response.data);
   };
@@ -60,6 +71,8 @@ const Dictionary = (props) => {
         <br />
 
         <Results results={wordData} />
+        <br />
+        <Images photos={image} />
       </div>
     );
   } else {

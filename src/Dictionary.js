@@ -59,6 +59,7 @@ const Dictionary = (props) => {
           <form onSubmit={handleSubmit}>
             <label> What word do you want to look up?</label>
             <input
+              className="mb-2"
               type="search"
               placeholder="sunshine"
               onChange={handleKeyword}
@@ -66,7 +67,7 @@ const Dictionary = (props) => {
               required
             />
           </form>
-          <small className="hint mt-2">i.e. family, plants, joy</small>
+          <small className="hint">i.e. family, plants, joy</small>
         </section>
         <br />
 
